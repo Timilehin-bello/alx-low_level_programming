@@ -1,18 +1,12 @@
 #include <stdio.h>
-#include <string.h>
 #include <unistd.h>
 /**
- * main - program's main functio
- * Return: 1
+ * main - Write a text in the standar error
+ * Return:1
  */
 int main(void)
 {
-	int s;
-
-	s = strlen("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-
-	write(2,
-	      "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
-	      s);
-	return (1);
+char ch[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+write(2, ch, sizeof(ch) - 1);
+return (1);
 }
