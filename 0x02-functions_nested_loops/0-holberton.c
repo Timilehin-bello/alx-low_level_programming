@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
-  * main - Entry point
-  *
-  * Return: Always 0
-  */
+ * main - Print "Holberton"
+ *
+ * Return: Always 0 (Success)
+ */
+
 int main(void)
 {
-	_putchar('H');
-	_putchar('o');
-	_putchar('l');
-	_putchar('b');
-	_putchar('e');
-	_putchar('r');
-	_putchar('t');
-	_putchar('o');
-	_putchar('n');
+	int i = 0;
+	char name_of_school[] = "Holberton";
 
+	while (i < 9)
+	{
+		_putchar(name_of_school[i]);
+		i++;
+	}
+	_putchar('\n');
 	return (0);
 }
