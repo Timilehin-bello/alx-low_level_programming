@@ -2,10 +2,10 @@
 
 /**
   * add - Adds two values
-  * @n1: Integer one
-  * @n2: integer two
+  * @num1: Integer one
+  * @num2: integer two
   *
-  * Return: Integer value
+  * Return: Sum of two Integers
   */
 int add(int num1, int num2)
 {
