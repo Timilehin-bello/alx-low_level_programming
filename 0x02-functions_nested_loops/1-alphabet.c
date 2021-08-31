@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
- */
-
+  * print_alphabet - The alphabet
+  *
+  * Return: void
+  */
 void print_alphabet(void)
 {
 	char c;
