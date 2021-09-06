@@ -2,11 +2,12 @@
 
 /**
   * _strlen - Returns the length of a string
-  * 
+  *
   * @s: String counter
   *
   * Return: String length
   */
+
 int _strlen(char *s)
 {
 	int len = 0;
@@ -18,4 +19,3 @@ int _strlen(char *s)
 
 	return (len);
 }
-
