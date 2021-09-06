@@ -2,12 +2,12 @@
 
 /**
   * _strcpy - Copy a string
-  * 
   * @dest: Destination value
   * @src: Source value
   *
   * Return: Pointer to dest
   */
+
 char *_strcpy(char *dest, char *src)
 {
 	int i;
