@@ -2,17 +2,13 @@
 #include <stdio.h>
 
 /**
- * infinite_add -  Adds two numbers
+ * infinite_add -  adds two numbers
+ * @n1: first number
+ * @n2: second number
+ * @r: result
+ * @size_r: result 
+ * Return: sum
  *
- * @n1: First number
- *
- * @n2: Second number
- *
- * @r: Result
- *
- * @size_r: Size
- *
- * Return: sum of two numbers
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
