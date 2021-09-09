@@ -14,7 +14,7 @@ char *_strcat(char *dest, char *src)
 {
 	int j = 0, i;
 
-	while (dest[dlen])
+	while (dest[j])
 	{
 		j++;
 	}
