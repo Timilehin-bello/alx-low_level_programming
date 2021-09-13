@@ -1,29 +1,32 @@
 #include "main.h"
 
-
 /**
- * _strcmp - Compare two strings
- *
- * @s1: First string
- *
- * @s2: Second string
- *
- * Return: 0 if equal, less than 1 or greater than 1
- */
-
-int _strcmp(char *s1, char *s2)
+  * _strspn - search a string for a set of bytes
+  * @s: source string
+  * @accept: accepted string
+  *
+  * Return: number of bytes in the init segment
+  */
+unsigned int _strspn(char *s, char *accept)
 {
-	int diff = 0;
-	int i = 0;
+	unsigned int a = 0, b, t = 0;
 
-	while (s1[i])
+	while (accept[a])
 	{
-		if (s1[i] != s2[i])
+		b = 0;
+
+		while (s[b] != 32)
 		{
-			diff = ((s1[i] - '\0') - (s2[i] - '\0'));
-			break;
+			if (accept[a] == s[b])
+			{
+				t++;
+			}
+
+			b++;
 		}
-		i++;
+
+		a++;
 	}
-	return (diff);
+
+	return (t);
 }
