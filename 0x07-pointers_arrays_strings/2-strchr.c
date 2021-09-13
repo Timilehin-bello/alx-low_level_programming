@@ -6,21 +6,14 @@
  * Return: the pointer to the first occurrence of the character c.
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_strchr(char *s, char c)
 {
-	int i = 0;
+	unsigned int i = 0;
 
-	while (src[i] != '\0' && i < n)
-	{
-		*(dest + i) = src[i];
-		i++;
-	}
-
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-
-	return (dest);
+	for (; *(s + i) != '\0'; i++)
+		if (*(s + i) == c)
+			return (s + i);
+	if (*(s + i) == c)
+		return (s + i);
+	return ('\0');
 }
