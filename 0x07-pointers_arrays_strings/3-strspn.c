@@ -1,30 +1,29 @@
 #include "main.h"
 
+
 /**
-  * _strchr - locate character in string
-  * @s: source string
-  * @c: character to find
-  *
-  * Return: the string from character found
-  */
+ * _strcmp - Compare two strings
+ *
+ * @s1: First string
+ *
+ * @s2: Second string
+ *
+ * Return: 0 if equal, less than 1 or greater than 1
+ */
 
-char *_strchr(char *s, char c)
+int _strcmp(char *s1, char *s2)
 {
-	int a = 0, b;
+	int diff = 0;
+	int i = 0;
 
-	while (s[a])
+	while (s1[i])
 	{
-		a++;
-	}
-
-	for (b = 0; b <= a; b++)
-	{
-		if (c == s[b])
+		if (s1[i] != s2[i])
 		{
-			s += b;
-			return (s);
+			diff = ((s1[i] - '\0') - (s2[i] - '\0'));
+			break;
 		}
+		i++;
 	}
-
-	return ('\0');
+	return (diff);
 }
