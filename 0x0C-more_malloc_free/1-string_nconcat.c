@@ -3,13 +3,12 @@
 
 /**
  * string_nconcat - concatenates two strings.
- * @s1: first string to copy
- * @s2: second string to copy
- * @n: number of bytes of s2 to copy
+ * @s1: first string.
+ * @s2: second string.
+ * @n: amount of bytes.
  *
- * Return: char pointer to newly allocated place in memory
+ * Return: pointer to the allocated memory
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *sout;
