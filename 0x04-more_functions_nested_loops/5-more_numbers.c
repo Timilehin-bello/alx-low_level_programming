@@ -10,10 +10,12 @@ void more_numbers(void)
 {
 	int i = 0;
 
-	while (i <= 9) {
+	while (i <= 9)
+	{
 		char *j = "01234567891011121314";
 
-		while (*j) {
+		while (*j)
+		{
 			_putchar(*j);
 			j++;
 		}
