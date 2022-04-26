@@ -1,34 +1,77 @@
 #include "lists.h"
+#include <stddef.h>
+#include <stdlib.h>
+
+
 /**
- * print_listint_safe - Print a `listint_t` linked list including mem addresses
- * @head: head of linked list
- * Description: Go through the list only once.
- * Return: number of nodes in list. If fails, exit with status 98.
- */
+  * print_listint_safe - prints a linked list including those with loops
+  * @head: the list
+  * Return: number of nodes in the list
+  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current;
-	size_t count;
-	const listint_t *hold;
+	listint_t *head_hold, *loop;
+	int traversed, len;
 
-	current = head;
-	if (current == NULL)
-		exit(98);
+	head_hold = (listint_t *)head;
+	loop = find_loop((listint_t *)head);
+	traversed = len =  0;
 
-	count = 0;
-	while (current != NULL)
+	if (head == NULL)
+		return (len);
+
+	while (head_hold)
 	{
-		hold = current;
-		current = current->next;
-		count++;
-		printf("[%p] %d\n", (void *)hold, hold->n);
-
-		if (hold < current)
+		printf("[%p] %d\n", (void *)head_hold, head_hold->n);
+		len++;
+		if (head_hold == loop || head_hold == NULL)
 		{
-			printf("-> [%p] %d\n", (void *)current, current->n);
+			traversed++;
 			break;
+		}
+		head_hold = head_hold->next;
+	}
+
+	while (head_hold)
+	{
+		head_hold = head_hold->next;
+		if (head_hold == loop && traversed == 1)
+			break;
+		printf("[%p] %d\n", (void *)head_hold, head_hold->n);
+		len++;
+	}
+	if (traversed == 1)
+		printf("-> [%p] %d\n", (void *)loop, loop->n);
+
+	return (len);
+}
+
+/**
+  * find_loop - checks whether a linked list contains a loop or not
+  * @head: head of the loop
+  * Return: 1 if there is a loop or 0 if not
+  */
+listint_t *find_loop(listint_t *head)
+{
+	listint_t *slow_p, *fast_p;
+
+	slow_p = fast_p = head;
+	while (slow_p && fast_p && fast_p->next)
+	{
+		slow_p = slow_p->next;
+		fast_p = fast_p->next->next;
+		if (slow_p == fast_p)
+		{
+			slow_p = head;
+			while (slow_p != fast_p)
+			{
+				slow_p = slow_p->next;
+				fast_p = fast_p->next;
+			}
+			return (fast_p);
 		}
 	}
 
-	return (count);
+	return (NULL);
 }
+
